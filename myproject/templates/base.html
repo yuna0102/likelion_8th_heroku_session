@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'likelion/css/style.css' %}">
+    <!-- href 부분은 그냥 경로 설정임. settings.py에서 static까지 경로 선언해줬으니까 그거 받아서 그 뒤에 폴더 경로 설정 -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div id="logo">
+            <img src="{% static 'likelion/img/사자1.PNG' %}" width="100" height="100">
+        </div>
+        <ul class="right-nav">
+            <li>home</li>
+            <li>history</li>
+            <li>portfolio</li>
+        </ul>
+
+    </div>
+    {% block contents %}
+    {% endblock %}
+</body>
+
+</html>
