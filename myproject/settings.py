@@ -21,7 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','fn64=!ckm9rp7fi1_jurgl=kd77z46r!7#cjv3wphn6_&23m-r')
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 'fn64=!ckm9rp7fi1_jurgl=kd77z46r!7#cjv3wphn6_&23m-r')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -83,7 +84,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=500)   
+db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 
@@ -130,4 +131,4 @@ STATICFILES_DIRS = (
     # 앱 생기면 또 등록해줘야함
     # likelion이라는 앱에 들어가서 static이라는 폴더에 들어갈 것이라고 설정
 )
-STATIC_ROOT = "/staticfiles/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
